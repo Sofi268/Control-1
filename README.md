@@ -1,7 +1,7 @@
-# Practico 1
+# Resumen Ejercicios 1 Parcial practico
 
-1) Dada una señal de entrada y salida determinar polos y valor de regimen
-   
+## Dada una señal de entrada y salida determinar polos y valor de regimen
+
 ```
 clear all; clc; close all; 
 pkg load control; 
@@ -20,7 +20,7 @@ root(G)
 
 ```
 
-## Mason:
+## Mason
 
 **Primero:** obtener las ganancias de camino directo
 M = ganancias
@@ -60,10 +60,9 @@ D2 = 1;
 # FdT de mi sistema por algoritmo de Mason 
 G = (M1*D1 + M2*D2) / D 
 G = simplify(G)
-
 ```
 
-## Parametros de rta temporal de primer orden:
+## Parametros de rta temporal de primer orden
 
 ```
 clear all; clc; close all; 
