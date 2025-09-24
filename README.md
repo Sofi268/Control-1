@@ -62,8 +62,10 @@ G = (M1*D1 + M2*D2) / D
 G = simplify(G)
 ```
 
-## Parametros de rta temporal de primer orden
+## Parametros de rta temporal de segundo orden:
+Solo con ver el grafico estamos
 
+## Parametros de rta temporal de segundo orden:
 ```
 clear all; clc; close all; 
 pkg load control; 
@@ -215,27 +217,10 @@ D = 1 - (l1+l2+l3) + (l1*l2+ l1*l3+ l2*l3);
 Lo compile y no me daba asi que lo hice con la 
 calculadora y me daba  -2.62        
 (este seria el polo dominante) -6 -7.38
-## Parametros de rta temporal de primer orden
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/80254749-8e11-4bd6-aa6f-235003f49c72" />
+## Parametros de rta temporal de primer orden:
+K= 6 (valor de regimen)
+T = 4/t en que llega al 98% = 31 s
 
-<img width="443" height="64" alt="image" src="https://github.com/user-attachments/assets/61cd3579-d22e-438d-8075-8363ff853eec" />
+<img width="866" height="517" alt="image" src="https://github.com/user-attachments/assets/4665da63-7df0-4c68-b3a6-efe248dd189f" />
 
-```
- pkg load symbolic 
-syms s real 
-s=tf('s'); 
-K=6 
-te=137 %te en banda de +-2% 
-T=te/4 %si usara el te cuando se establece 
-al 100% divido te/5 
-%FUNCIÓN SISTEMA DE PRIMER 
-ORDEN 
-G=K/(T*s+1) 
-%GRÁFICO PARA VERIFICAR 
-step(G,350);grid 
-ylim([0 6]) 
-k = 6 
-te = 137 
-T = 34.250
-```
