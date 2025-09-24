@@ -100,8 +100,40 @@ no se si estara bien
 
 
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/482f1489-6f67-4202-b005-b1ed68a33b04" />
+2. 
+<img width="922" height="443" alt="image" src="https://github.com/user-attachments/assets/82b28d96-c6d6-4f25-958a-d6db0b1515ef" />
+
+<img width="950" height="369" alt="image" src="https://github.com/user-attachments/assets/6762ca26-05bc-479d-bd04-2b8a745b43cd" />
 
 
+```
+pkg load symbolic; 
+syms M1 M2 G1 G2 G3 l1 l2 l3 D1 D D2 s real; 
+G1=5; 
+G2=1/(s+6); 
+G3= 2/(s+1) 
+# Caminos directos de mi sistema 
+M1 = G1*1*G3; 
+M2 = G1*1*G2*(-1)*1*(-1)*G3; 
+Y_R = (sym) 
+/ 2            
+\ 
+5*\s  + 13*s + 43/ -------------------------- 
+3       
+2 
+3*s  + 48*s  + 238*s + 348 
+# Lazos de mi grafo 
+l1 = -G1; 
+l2 = -G2; 
+l3=-G3; 
+# Determinante y Dk de mi sistema 
+D = 1 - (l1+l2+l3) + (l1*l2+ l1*l3+ l2*l3); 
+>> roots(Y_R) 
+```
+
+Lo compile y no me daba asi que lo hice con la 
+calculadora y me daba  -2.62        
+(este seria el polo dominante) -6 -7.38
 ## Parametros de rta temporal de primer orden
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/80254749-8e11-4bd6-aa6f-235003f49c72" />
