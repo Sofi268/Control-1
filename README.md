@@ -1,6 +1,88 @@
 # Practico 1
-# Resumen Ejercicios 1 Parcial practico
 
+1) Dada una señal de entrada y salida determinar polos y valor de regimen
+   
+```
+clear all; clc; close all; 
+pkg load control; 
+pkg load symbolic; 
+ 
+syms U C Y A F s X E D B real 
+% Se puede obtener facilmente la funcion de transferencia pasando al dominio de laplace y despejando 
+% Despeje
+% Y(s)/U(s) = 
+
+% Reemplazo de valores
+G = algo
+
+root(G)
+%TVF con G
+
+```
+
+## Mason:
+
+**Primero:** obtener las ganancias de camino directo
+M = ganancias
+**Segundo:** determinante
+Lazos = ganancias 
+Det = 1- lazos indiv + lazos bijuntos ...
+**Tercero:** Det k
+Parte del det que no comparte nodos con el camino dir
+**Cuarto:** Formula
+G = (M.Dk)/D
+
+```
+clc; clear all; close all; 
+pkg load symbolic; 
+syms G1 G2 G3 G4 G5 G6 H2 H4 H6 s real; 
+ 
+# Def de FdT
+G1 = 
+G2 = 
+H1 = 
+
+# Caminos directos de mi sistema
+M1 = G1*G2*G3*G4*G5; 
+M2 = G1*G6*G5; 
+ 
+# Lazos de mi grafo 
+l1 = -H2*G2; 
+l2 = -H6*G6; 
+l3 = -H4*G1*G2*G3*G4; 
+l4 = -H4*G1*G6; 
+ 
+# Determinante y Dk de mi sistema 
+D = 1 - (l1+l2+l3+l4) + (l1*l2 + l2*l3); 
+D1 = 1 - l2; 
+D2 = 1; 
+ 
+# FdT de mi sistema por algoritmo de Mason 
+G = (M1*D1 + M2*D2) / D 
+G = simplify(G)
+
+```
+
+## Parametros de rta temporal de primer orden:
+
+```
+clear all; clc; close all; 
+pkg load control; 
+pkg load symbolic; 
+
+K = ;         
+Vmax = ;    
+Tp = ;         
+Te = ;   
+
+% Sobrepasamiento maximo 
+Mp = (Vmax-K)/(K) 
+Mp = 0.2500 
+psita = sqrt((log(Mp)^2)/(log(Mp)^2+pi^2)) % Coeficiente de amortiguamiento 
+Wn = pi/(Tp*sqrt(1-psita^2)) % Frecuencia natural  
+
+```
+--------------------------------------------------------------- Ejemplos ------------------------------------------------------------------------
 1) Dada una señal de entrada y salida determinar polos y valor de regimen
 
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/f4d5acfe-b086-46e4-98f4-334a917430aa" />
